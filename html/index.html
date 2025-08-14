@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interactiva</title>
+    <link rel="stylesheet" href="/actividad-2-/css/style.css">
+</head>
+<body>
+    <!-- Floating Background Shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">Mi Sitio Web</div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="dropdown-btn">Inicio</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleDropdown('services')">
+                            Servicios ▼
+                        </button>
+                        <div class="dropdown-content" id="services">
+                            <a href="#">Diseño Web</a>
+                            <a href="#">Desarrollo</a>
+                            <a href="#">Consultoría</a>
+                            <a href="#">Soporte</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleDropdown('about')">
+                            Acerca de ▼
+                        </button>
+                        <div class="dropdown-content" id="about">
+                            <a href="#">Nuestra Historia</a>
+                            <a href="#">Equipo</a>
+                            <a href="#">Misión</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="dropdown-btn">Contacto</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleDropdown('more')">
+                            Más ▼
+                        </button>
+                        <div class="dropdown-content" id="more">
+                            <a href="#">Blog</a>
+                            <a href="#">Testimonios</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="dropdown-btn">Iniciar Sesión</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-btn" onclick="toggleDropdown('register')">
+                            Registrarse ▼
+                        </button>
+                        <div class="dropdown-content" id="register">
+                            <a href="#">Crear Cuenta</a>
+                            <a href="#">Recuperar Contraseña</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Interactive Section -->
+            <div class="card">
+                <h2>Botón Interactivo</h2>
+                <p>Este botón cambia de color y muestra animaciones cuando interactúas con él.</p>
+                <br>
+                <button class="interactive-btn" onclick="handleButtonClick(this)">
+                    ¡Haz clic aquí!
+                </button>
+                <div id="buttonStatus" class="status-message"></div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="card">
+                <h2>Formulario de Contacto</h2>
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" name="service" class="form-control form-select" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="web-design">Diseño Web</option>
+                            <option value="development">Desarrollo</option>
+                            <option value="consulting">Consultoría</option>
+                            <option value="support">Soporte</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    <div id="formStatus" class="status-message"></div>
+                </form>
+            </div>
+        </main>
+
+        <!-- RGB Interactive Box Section -->
+        <section class="rgb-section">
+            <div class="rgb-card">
+                <div class="rgb-border-wrapper">
+                    <div class="rgb-content">
+                        <h2>💎 Zona Especial</h2>
+                        <p>Un cuadro con bordes dinámicos que cambian de color constantemente</p>
+                        
+                        <div class="interactive-tag" onclick="openModal()">
+                            <span class="tag-icon">🚀</span>
+                            <span class="tag-text">Abrir Interfaz Mágica</span>
+                            <span class="tag-arrow">→</span>
+                        </div>
+                        
+                        <div class="rgb-info">
+                            <small>✨ Haz hover sobre la etiqueta para ver el efecto</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Interface -->
+        <div id="magicModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>🌟 Interfaz Mágica Activada</h2>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="magic-animation">
+                        <div class="magic-circle"></div>
+                        <div class="magic-circle"></div>
+                        <div class="magic-circle"></div>
+                    </div>
+                    <h3>¡Bienvenido al Portal Dimensional! 🌌</h3>
+                    <p>Has activado una interfaz especial llena de magia y tecnología avanzada.</p>
+                    <p>Esta ventana modal contiene efectos visuales únicos y animaciones sorprendentes.</p>
+                    
+                    <div class="modal-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <span>Animaciones fluidas</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎨</span>
+                            <span>Efectos visuales RGB</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🚀</span>
+                            <span>Interactividad avanzada</span>
+                        </div>
+                    </div>
+                    
+                    <button class="modal-action-btn" onclick="triggerMagicEffect()">
+                        ✨ Activar Magia Especial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/actividad-2-/components/script.js"></script>
+</body>
+</html>
